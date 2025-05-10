@@ -17,7 +17,7 @@ import jakarta.persistence.Table;
 @AllArgsConstructor
 @Setter
 @Getter
-public class SupplierCompany extends CompanyEntity {
+public class SupplierCompanyEntity  extends CompanyEntity {
     private Float score;
     private Float avgPrice;
     private Integer commentsCount;
