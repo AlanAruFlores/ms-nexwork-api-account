@@ -3,7 +3,6 @@ package com.nexwork.api.account.ms_nexwork_api_account.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -17,7 +16,7 @@ import jakarta.persistence.Table;
 @AllArgsConstructor
 @Setter
 @Getter
-public class SupplierCompany extends CompanyEntity {
+public class SupplierCompanyEntity  extends CompanyEntity {
     private Float score;
     private Float avgPrice;
     private Integer commentsCount;

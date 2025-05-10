@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @Table(name = "applicant_companies")
-public class ApplicantCompany extends CompanyEntity {
+public class ApplicantCompanyEntity extends CompanyEntity {
     
 }
