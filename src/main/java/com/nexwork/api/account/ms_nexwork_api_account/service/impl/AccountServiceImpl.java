@@ -46,5 +46,5 @@ public class AccountServiceImpl implements AccountService {
             .map(worker -> Converter.convertToDto(worker, WorkerResponseDto.class))
             .collect(Collectors.toList());
     }
-    
+
 }

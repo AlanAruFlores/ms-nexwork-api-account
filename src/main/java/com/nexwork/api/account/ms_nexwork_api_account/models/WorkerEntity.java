@@ -5,10 +5,18 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
+import lombok.AllArgsConstructor;
 
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "workers")
+@Getter
+@Setter
+@SuperBuilder
 public class WorkerEntity extends UserEntity {
     
     @ManyToOne

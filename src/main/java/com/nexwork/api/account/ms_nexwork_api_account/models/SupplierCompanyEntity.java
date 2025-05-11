@@ -5,10 +5,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import lombok.Setter;
 import lombok.Getter;
 import jakarta.persistence.Table;
-
 
 @Entity
 @Table(name = "supplier_companies")
@@ -16,6 +16,7 @@ import jakarta.persistence.Table;
 @AllArgsConstructor
 @Setter
 @Getter
+@SuperBuilder
 public class SupplierCompanyEntity  extends CompanyEntity {
     private Float score;
     private Float avgPrice;
