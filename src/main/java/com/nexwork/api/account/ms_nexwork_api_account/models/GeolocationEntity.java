@@ -9,13 +9,14 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Column;
-
+import lombok.Builder;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "geolocations")
+@Builder
 public class GeolocationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

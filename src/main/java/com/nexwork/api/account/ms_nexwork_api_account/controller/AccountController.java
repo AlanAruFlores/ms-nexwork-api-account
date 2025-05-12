@@ -4,13 +4,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.http.ResponseEntity;
 import java.util.List;
-import com.nexwork.api.account.ms_nexwork_api_account.dto.SupplierResponseDto;
-import com.nexwork.api.account.ms_nexwork_api_account.dto.WorkerResponseDto;
+
+import com.nexwork.api.account.ms_nexwork_api_account.dto.response.SupplierResponseDto;
+import com.nexwork.api.account.ms_nexwork_api_account.dto.response.WorkerResponseDto;
+import com.nexwork.api.account.ms_nexwork_api_account.dto.request.MetricRequestDto;
+import com.nexwork.api.account.ms_nexwork_api_account.dto.response.MessageResponseDto;
 import com.nexwork.api.account.ms_nexwork_api_account.service.AccountService;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
+
 
 @RestController
 @RequestMapping("/accounts/v1/suppliers")
@@ -28,6 +35,16 @@ public class AccountController {
     @GetMapping("/{id}")
     public ResponseEntity<SupplierResponseDto> getSupplierById(@PathVariable Long id) {
         return ResponseEntity.ok(accountService.searchSupplierById(id));
+    }
+
+    @PutMapping("/metrics/{id}")
+    public ResponseEntity<MessageResponseDto> putSupplierMetrics(@PathVariable("id") Long supplierId, @RequestBody MetricRequestDto metrics) {
+        accountService.updateSupplierMetrics(supplierId,metrics);
+        return ResponseEntity.ok(MessageResponseDto.builder()
+            .code(200)
+            .message("UPDATED")
+            .data(null)
+            .build());
     }
 
     @GetMapping("/{id}/workers")

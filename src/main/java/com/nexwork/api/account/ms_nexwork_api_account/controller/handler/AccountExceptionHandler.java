@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.nexwork.api.account.ms_nexwork_api_account.dto.ErrorResponseDto;
+import com.nexwork.api.account.ms_nexwork_api_account.dto.response.ErrorResponseDto;
 import com.nexwork.api.account.ms_nexwork_api_account.exceptions.InternalException;
 import com.nexwork.api.account.ms_nexwork_api_account.exceptions.NotFoundException;
 

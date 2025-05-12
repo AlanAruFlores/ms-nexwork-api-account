@@ -9,12 +9,14 @@ import jakarta.persistence.Column;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 
 @Entity
 @Table(name = "company_types")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class CompanyTypeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
