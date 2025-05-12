@@ -35,7 +35,11 @@ public class CompanyTypeDAOImpl implements CompanyTypeDAO{
         try{
             return companyTypeRepository.findById(id).orElseThrow(
                 ()-> new NotFoundException("Company type not found"));
-        } catch (Exception e) {
+        }
+        catch (NotFoundException e) {
+            throw new NotFoundException(e.getDetail());
+        }
+        catch (Exception e) {
             throw new InternalException(e.getMessage());
         }
     }

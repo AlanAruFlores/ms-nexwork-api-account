@@ -39,7 +39,11 @@ public class SupplierCompanyDAOImpl implements SupplierCompanyDAO {
         try{
             return repository.findById(id)
                 .orElseThrow(()-> new NotFoundException("Supplier not found"));
-        } catch (Exception e) {
+        } 
+        catch (NotFoundException e) {
+            throw new NotFoundException(e.getDetail());
+        }
+        catch (Exception e) {
             throw new InternalException(e.getMessage());
         }
     }

@@ -7,14 +7,17 @@ import org.springframework.stereotype.Component;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import com.nexwork.api.account.ms_nexwork_api_account.models.ApplicantCompanyEntity;
 import com.nexwork.api.account.ms_nexwork_api_account.models.CompanyTypeEntity;
 import com.nexwork.api.account.ms_nexwork_api_account.models.GeolocationEntity;
 import com.nexwork.api.account.ms_nexwork_api_account.models.SupplierCompanyEntity;
 import com.nexwork.api.account.ms_nexwork_api_account.models.WorkerEntity;
+import com.nexwork.api.account.ms_nexwork_api_account.persistence.repository.ApplicantCompanyRepository;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.repository.CompanyTypeRepository;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.repository.GeolocationRepository;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.repository.SupplierCompanyRepository;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.repository.WorkerRepository;
+import com.nexwork.api.account.ms_nexwork_api_account.utils.ApplicantCompanyDataHelper;
 import com.nexwork.api.account.ms_nexwork_api_account.utils.CompanyTypeDataHelper;
 import com.nexwork.api.account.ms_nexwork_api_account.utils.GeolocationDataHelper;
 import com.nexwork.api.account.ms_nexwork_api_account.utils.SupplierCompanyHelper;
@@ -30,6 +33,8 @@ public class DataInitializer implements CommandLineRunner {
     private final SupplierCompanyRepository supplierCompanyRepository;
     private final GeolocationRepository geolocationRepository;
     private final WorkerRepository workerRepository;
+    private final ApplicantCompanyRepository applicantCompanyRepository;
+
 
     @Override
     public void run(String... args) throws Exception {
@@ -46,7 +51,16 @@ public class DataInitializer implements CommandLineRunner {
 
 
 
-        //Inicializar entidades de proveedores
+        //Inicializar datos de compañias solicitantes
+        List<ApplicantCompanyEntity> applicants = ApplicantCompanyDataHelper.getApplicantCompanyList();
+        applicants.get(0).setGeolocation(geolocationRepository.findById(4L).get());
+
+        applicants.get(1).setGeolocation(geolocationRepository.findById(5L).get());
+
+        applicantCompanyRepository.saveAll(applicants);
+
+
+        //Inicializar entidades de proveedores  
         List<SupplierCompanyEntity> suppliers = SupplierCompanyHelper.getSupplierCompanies();
         
         suppliers.get(0).setCompanyType(companyTypeRepository.findByName("Limpieza e Higiene Industrial").get());            

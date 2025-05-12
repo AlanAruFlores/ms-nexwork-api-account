@@ -1,4 +1,4 @@
-package com.nexwork.api.account.ms_nexwork_api_account.dto;
+package com.nexwork.api.account.ms_nexwork_api_account.dto.response;
 
 import lombok.Builder;
 import lombok.Data;

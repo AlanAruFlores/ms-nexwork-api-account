@@ -1,4 +1,4 @@
-package com.nexwork.api.account.ms_nexwork_api_account.dto;
+package com.nexwork.api.account.ms_nexwork_api_account.dto.response;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -14,13 +14,17 @@ public class SupplierResponseDto {
     private String address;
     private String description;
     private String type;
-    private GeolocationDto geolocation;
+    private GeolocationResponseDto geolocation;
     private Float score;
     
+
+    @JsonProperty("company_type")
+    private CompanyResponseTypeDto companyType;
+
     @JsonProperty("avg_price")
     private Float avgPrice;
 
-    @JsonProperty("is_verified")
+    @JsonProperty("comments_count")
     private Integer commentsCount;
 
     @JsonProperty("is_verified")

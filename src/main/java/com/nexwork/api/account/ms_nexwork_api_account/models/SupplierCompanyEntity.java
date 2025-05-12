@@ -1,7 +1,11 @@
 package com.nexwork.api.account.ms_nexwork_api_account.models;
 
+import java.util.Set;
+import java.util.HashSet;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
@@ -22,8 +26,11 @@ public class SupplierCompanyEntity  extends CompanyEntity {
     private Float avgPrice;
     private Integer commentsCount;
 
+
     @OneToOne
     @JoinColumn(name = "company_type_id")
     private CompanyTypeEntity companyType;
     
+    @OneToMany(mappedBy = "supplierCompany", orphanRemoval = true)
+    private Set<CommentaryEntity> commentaries = new HashSet<>();
 }

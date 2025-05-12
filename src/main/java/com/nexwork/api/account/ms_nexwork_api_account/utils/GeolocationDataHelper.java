@@ -22,6 +22,16 @@ public class GeolocationDataHelper {
                 .id(3L)
                 .lat(51.5074f)
                 .ln(-0.1278f)
+                .build(),
+            GeolocationEntity.builder()
+                .id(4L)
+                .lat(48.8566f)
+                .ln(2.3522f)
+                .build(),
+            GeolocationEntity.builder()
+                .id(5L)
+                .lat(35.6895f)
+                .ln(139.6917f)
                 .build()
         );
     }
