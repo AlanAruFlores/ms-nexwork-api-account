@@ -2,9 +2,6 @@ package com.nexwork.api.account.ms_nexwork_api_account.persistence.impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Repository;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.SupplierCompanyDAO;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.repository.SupplierCompanyRepository;
 import lombok.extern.slf4j.Slf4j;

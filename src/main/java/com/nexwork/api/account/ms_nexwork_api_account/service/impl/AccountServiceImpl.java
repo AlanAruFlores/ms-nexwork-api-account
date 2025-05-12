@@ -13,7 +13,6 @@ import lombok.RequiredArgsConstructor;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.ApplicantCompanyDAO;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.SupplierCompanyDAO;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.WorkerDAO;
-import com.nexwork.api.account.ms_nexwork_api_account.persistence.repository.ApplicantCompanyRepository;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.repository.CommentaryRepository;
 
 import lombok.extern.slf4j.Slf4j;

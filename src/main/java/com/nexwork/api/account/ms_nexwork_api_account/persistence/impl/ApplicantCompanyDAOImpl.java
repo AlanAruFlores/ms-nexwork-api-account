@@ -3,7 +3,6 @@ package com.nexwork.api.account.ms_nexwork_api_account.persistence.impl;
 import java.util.List;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.ApplicantCompanyDAO;
 import com.nexwork.api.account.ms_nexwork_api_account.persistence.repository.ApplicantCompanyRepository;
-import com.nexwork.api.account.ms_nexwork_api_account.persistence.repository.GeolocationRepository;
 import com.nexwork.api.account.ms_nexwork_api_account.models.ApplicantCompanyEntity;
 import com.nexwork.api.account.ms_nexwork_api_account.exceptions.InternalException;
 import com.nexwork.api.account.ms_nexwork_api_account.exceptions.NotFoundException;
